@@ -6,12 +6,16 @@
     <title>Maryana</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Caveat&family=Crimson+Text:ital,wght@0,400;0,700;1,700&family=Dancing+Script:wght@400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Pathway+Gothic+One&family=Patrick+Hand&family=Work+Sans:wght@100&family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0edb311df1.js" crossorigin="anonymous"></script>
     <style>
-        *{
-            /* background-image: url(./Untitled\ design.png);
-            background-size: cover;
-            background-repeat: no-repeat; */
-        }
+       * {
+  box-sizing: border-box;
+
+}
+      body{
+        width: 98%;
+        padding-left: 1%;
+      }
         /*style for first section   */
         .firstsection{
             display: flex;
@@ -32,6 +36,9 @@
            flex-direction: row;
            background-image: url(./Untitled\ design.png);
            width: 100%;
+           position: fixed;
+           top: 0;
+           z-index: 400;
            
           
           
@@ -40,36 +47,328 @@
 
 
         @media screen and (max-width: 667px){
-            .navbar-brand{
+            .navbar{
               display: flex;
-              flex-direction: column;
+              flex-direction: row;
                font-size: x-small;
+               width: 100%;
+               
             }
             .navbar-brand  img{
-               width: 15%;
+               width: 10%;
             }
             
         } 
           /*end style of firstsection */ 
           /* style for ojectsection */
-          .objectsection{
+          #objectsection{
             align-items: center;
+           
+           margin-top: 15%;
+           margin-bottom: 5%;
+            column-gap: 20%;
+            padding-top: 1%;
+          }
+          .ob-container{
             display: flex;
-            background-image: url(./Untitled\ design.png);
+            flex-direction: row;
             column-gap: 20%;
           }
          .ob-sec{
           background: none;
           text-align: center;
-          width: 70%;
+          width: 50%;
            
          } 
          .obb-sec{
-            width: 30%;
+            width: 50%;
          } 
          /*end of style objectsection*/
          /*style for education*/
+         .categories{
+            margin-top: 7%;
+         }
+         .timeline {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 1%;
+  background-color: rgb(88, 86, 71);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 27%;
+  background-color: rgb(205, 166, 9);
+  border: 4px solid #785438;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: -10%;
+}
+
+/* Place the container to the right */
+.right {
+  left: 30%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 40%;
+  border: medium solid rgb(214, 151, 63);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgb(210, 167, 60);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: -5%;
+  border: medium solid rgb(214, 151, 63);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgb(214,151, 63) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -11%;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: rgb(188, 167, 114);
+  position: relative;
+  border-radius: 6px;
+  left: -10%;
+  width: 60%;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 667px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 150%;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 150%;
+  padding-left: 70px;
+  padding-right: 25px;
+  font-size:x-small;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 90%;
+  border: medium solid rgb(145, 60, 60);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgb(135, 65, 65) transparent transparent;
+  }
+  
+
+  /* Make sure all circles are at the same spot */
+  .left::after {
+  left: 95%;
+  }
+  .right::after{
+    left: 78%;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .left {
+  left: 3%;
+  }
+}
+         /*end of section education*/
+         /*style for project section */
+         #project{
+            margin-top: 4%;
+         }
+         .pr-cotainer{
+            display: flex;
+            flex-direction: row;
+            column-gap: 2%;
+            width: 100%;
+            margin-top: 3%;
+         }
+         .project-card{
+            width: 25%;
+         }
+         .project1-card{
+            width: 25%;
+         }
+         .project2-card{
+            width: 25%;
+         }
+         .project3-card{
+            width: 25%;
+         }
+
+         /*end of section project*/
+         /*style for Experince section*/
+         #Experience{
+            text-align: center;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            
+         }
+
+         .Ex-container{
+            display: flex;
+            flex-direction: row;
+            column-gap: 3%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+           
+         }
+        .Ex-container .Ex-center{
+            text-align: center;
+            width: 80%;
+           
+           
+
+        }
+
+         /*end of style experince*/
+         /*style for skills*/
+         #skills{
+        
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        
+      }
+      .sk_item{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+       
+        
+       }
+       .sk_ul{
+        margin:0 auto;
+        display: flex;
+        flex-direction: row;
+        column-gap: 20%;
+        list-style-type: none;
+        margin-top: 2%;
+       }
+
+
+
+         /*end style of skills*/
+          /*style of contact*/
+       #contact{
+        display: flex;
+        flex-direction: column;
+        
+              }
+      .con_it{
+      
+       
+       display: flex;
+       flex-direction: column;
+      padding-left: 20%;
+       align-items: center;
+      left: 10%;
+      column-gap: 5%;
+            
+       font-size: 25px;
+
+      }
+      .contact_item{
+        display: flex;
+        flex-direction: row;
+        column-gap: 10%;
+        
+        margin-top: 1%;
+       margin-bottom: 1%;
+       left: -30%;
+      }
+      
+     
+      /*end of style contact*/ 
+      /*style of footsection*/
+      #fo{
+       
+        align-items: center;
+        margin-top: 2%;
+        background-image: url(./Untitled\ design.png);
+        
+      }
+      .fo_item{
+        margin-top:20%;
+        text-align: center;
+        font-size: 30px;
+        margin-left: 5%;
+        padding: 10px;
+        
+      }
+      .fo_item i{
+        margin-right: 20%;
+        
+      }
+      @media secrean ( max-width: 667px ) { 
+    .ob-container {
+        display:flex;
+        
+
+
+    }
+      }
+
+
+      /*end style of foot section*/
+        
+@media screen and (max-width:667){
+    #objectsection, #categories , #project ,#Experience , #skills, #contact{
+        display:flex;
+        flex-direction:column;
+       
+ 
+    }
+   
+    
+}
         
     </style>
 </head>
@@ -79,43 +378,177 @@
            
             <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="./m.png" width="80px"></a>
-            <a class="navbar-brand" href="#">Home</a>
-            <a class="navbar-brand" href="#">Education</a>
-            <a class="navbar-brand" href="#">Projects</a>
-            <a class="navbar-brand" href="#">Experience</a>
-            <a class="navbar-brand" href="#">Skills</a>
-            <a class="navbar-brand" href="#">Contact me</a>
+            <a class="navbar-brand" href="#objectsection">Home</a>
+            <a class="navbar-brand" href="#categories">Education</a>
+            <a class="navbar-brand" href="#project">Projects</a>
+            <a class="navbar-brand" href="#Experience">Experience</a>
+            <a class="navbar-brand" href="#skills">Skills</a>
+            <a class="navbar-brand" href="#Contact">Contact me</a>
             </nav>
                         
         </section>
     </header>
     <main>
-        <section class="objectsection">
+        <section id="objectsection">
+            <div class="ob-container">
             <div class="ob-sec">
-            <h1>Maryan Mohammad<br> Al-Hawamdeh</h1>
+            <h1>Maryana Mohammad<br> Al-Hawamdeh</h1>
             <p style="font-size: 30px;background: none;">Secure a responsible career opportunity to fully utilize my training and skills, while making a significant contribution to the success of the company.</p>
-            <button> <a  href="./DOC-20230123-WA0004..pdf" title=""  target="_blank"    style="color:black;font-weight:bold; " > Download my CV.</a></button>
-        </div>
-        <div class="obb-sec">
-            <img src="./Maryana mohammad al-hawamdeh.png" alt="Maryana" width="80%">
-        </div>
+            <button style="background-image: url(./Untitled\ design.png);"> <a  href="./DOC-20230123-WA0004..pdf" title=""  target="_blank"    style="color:black;font-weight:bold;background-image: url(./Untitled\ design.png);font-size: 25px; " > Download my CV.</a></button>
+         </div>
+          <div class="obb-sec">
+            <img src="./Maryana mohammad al-hawamdeh.png" alt="Maryana" width="80%" height="70%">
+          </div>
+         </div>
 
         </section>
 
 
-        <section class="educationsection">
-            <div class="f-ed">
-                <h2   style="font-size: 50px;background: none;">
-                    Education
-                </h2>
-                <a href="./80737_9_1666265582.jpg" target="_blank"><img sr ></a>
+        <section id="categories">
+            <h2 style="text-align: center;"   >Education</h2><br><br>
+            <div class="timeline">
+                <div class="container left">
+                  <div class="content">
+                    <h2>Alshamlah High school</h2>
+                    <h4>2006-2007</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="container right">
+                  <div class="content">
+                    <h2>Alhussain in Talal Univercity</h2>
+                    <h4>2007-2011</h4>
+                    <p>Software Engenering</p>
+                  </div>
+                </div>
+                <div class="container left">
+                  <div class="content">
+                    <h2>Orang Akadmy Coding</h2>
+                    <h4>2023</h4>
 
-            </div>
-            <div class="se-ed">
-                
-            </div>
+                    <p>Web Developer</p>
+                  </div>
+                </div>
+
+               
         </section>
-    </main> 
+        <section  id="project">
+            <h2  style="text-align: center;" >Projects</h2>
+            <div class="pr-cotainer">
+
+                <div class="project3-card">
+                    <a href=""><img src="./fast.png" alt="project4" width="80%"></a>
+                    <div class="pr-container pr-center">
+                      <p>Portfolio project</p>
+                    </div>
+                  </div>
+               
+                <div class="project-card">
+                    <a href="https://maryanaalhawamdah.github.io/project2/" target="_blank"><img src="./project.png" alt="project2" width="70%"></a>
+                    <div class="pr-container pr-center">
+                      <p>Colorlib project</p>
+                    </div>
+                  </div>
+
+              <div class="project1-card">
+                <a href="https://maryanaalhawamdah.github.io/mini_project/" target="_blank"><img src="./project1.png" alt="project1" width="72%"></a>
+                <div class="pr-container pr-center">
+                  <p>Pizza choclate project</p>
+                </div>
+              </div>
+              
+              <div class="project2-card">
+                <a href="https://miro.com/app/board/uXjVM_lZ51Y=/" target="_blank"><img src="./fast.png" alt="project3"  width="85%"></a>
+                <div class="pr-container pr-center">
+                  <p>Fast Clean</p>
+                </div>
+              </div>
+
+             
+            </div>
+
+        </section>
+
+
+      <section id="Experience">
+            <h2  style="text-align: center;" >Experience</h2>
+            <div class="Ex-container">
+                <div class="Ex3-card" style="width:50%">
+                    <img src="./Akadymy.jpg" alt="Academy" style="width:60%">
+                       <div class="Ex-container Ex-center">
+                         <p style="padding-left: 30%;">Team work/web Developer<br>6/2023-11/2023</p>
+                       </div>
+                </div>
+              <div class="Ex-card" style="width:50% ">
+                  <img src="./darlig.jpg" alt="darlig" style="width:50%">
+                     <div class="Ex-container Ex-center">
+                      <p style="padding-left: 30%;">Human Resources and support services<br>2021-2023</p>
+                    </div>
+                </div>
+                  <div class="Ex2-card" style="width:50%">
+                     <img src="./seastar.jpg" alt="seastar" style="width:50%">
+                        <div class="Ex-container Ex-center">
+                          <p style="padding-left: 30%;">Human Resources and support services<br>2019-2021</p>
+                        </div>
+                 </div>
+          </div>
+
+       </section>
+
+    </section>
+    <section id="skills">
+        <h2 style="font-size: 50px;background: none;text-align: center;">Skills</h2>
+        <div class="sk_item">
+            <ul class="sk_ul">
+                <li><i class="fa-brands fa-html5" style="color: #3b48ab;font-size: 90px;"></i></li>
+                <li><i class="fa-brands fa-css3-alt" style="color: #782f93;font-size: 90px;"></i></li>
+                <li><i class="fa-brands fa-bootstrap" style="color: #ac2f78;font-size: 90px;"></i></li>
+                <li>
+                    <i class="fa-brands fa-square-git" style="color: #2a4b83;font-size: 90px;"></i>
+                </li>
+            </ul>
+            
+        </div>
+
+
+    </section>
+
+    <section id="Contact">
+        <h2 style="font-size: 50px;background: none;text-align: center;">Contact Me</h2>
+        <div class="contact_item">
+           <form class="con_it">
+            
+              <label for="name">Your Name:</label>
+              <input type="text" name="name" >
+              <label for="email">Your Email:</label>
+              <input type="email" name="email" >
+              <label for="message">Your message:</label>
+              <textarea name="message" rows="4" cols="40"></textarea>
+              <input type="submit" value="send to me"style="font-size:25px;">
+            </form>
+        </div>
+     </section>
+
+
+  </main> 
+  <footer>
+         
+    <section id="fo">
+        <div class="fo_item">
+            <i class="fa-solid fa-envelope " style="color: #040404; font-size: 50px;">   </i>
+            <i class="fa-solid fa-mobile-screen-button" style="color: #060606;font-size: 50px;"> </i>
+        
+       
+           
+             <i class="fa-brands fa-square-github " style="color: #050505;font-size:50px;"></i>
+             <i class="fa-brands fa-linkedin " style="color: #0b0b0b;font-size:50px;"></i>
+        </div>
+
+        
+    </section>
+
+
+</footer>
     
 </body>
 </html>
